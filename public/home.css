@@ -1,0 +1,36 @@
+li {
+  font-size: 18px;
+}
+
+img {
+    display: inline-block;
+    position: relative;
+    bottom: 30px;
+    height: 150px;
+    width: 150px;
+    float: right;
+}
+
+h1 {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 992px){
+  h1 {
+    font-size: 30px !important;
+  }
+  ul {
+    margin-left: -16px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  li {
+    font-size: 17px;
+  }
+  img {
+    bottom: 0px;
+    height: 80px;
+    width: 80px;
+  }
+}

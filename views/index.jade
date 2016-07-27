@@ -1,0 +1,19 @@
+link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+link(href='home.css', rel='stylesheet')
+
+div(class = 'container')
+  div(class = 'jumbotron')
+    h1 Image Search Service
+    img(src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRanZ1E5pTxu0iNmr8j5Ja5x93ny0_G0PI3OB3fqZwvuNszr9_nkg')
+  h2 Uses
+  ol
+    li You can search for images
+      ul
+        li Just add '/api/imagesearch/whatever' onto the url above
+        li 
+        li You will be provided with several urls of 10 pictures
+        li If you want a different set of pics, you can provide an offset, the url would then be '/api/imagesearch/whatever?offset=(any number)'
+    li You can search what other people have searched on this api
+      ul
+        li Just add '/api/latest/imagesearch' onto the url above
+        li You will be provided with 10 of the most recent search terms
