@@ -14,7 +14,7 @@ router.get('/:term', function(req, res){
   db.logSearch({ searchTerm: term });
   
   function properUrl(){
-    if(offset.match(/\d+/)){
+    if(offset && offset.match(/\d+/)){
       return 'https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=' 
       + term + '&count=10&offset=' + offset;
     } else {
