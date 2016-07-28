@@ -1,15 +1,15 @@
-var express = require('express');
-var router = express.Router();
-var url = require('url');
-var request = require('request');
-var mongoose = require('mongoose');
-var db = require('../models/userSearches');
+var express = require('express'),
+    router = express.Router(),
+    url = require('url'),
+    request = require('request'),
+    mongoose = require('mongoose'),
+    db = require('../models/userSearches');
 
 router.get('/:term', function(req, res){
-  var term = req.params.term;
-  var urlParts = url.parse(req.url, true);
-  var offset = urlParts.query.offset;
-  var myKey = process.env.MYAPIKEY;
+  var term = req.params.term,
+      urlParts = url.parse(req.url, true),
+      offset = urlParts.query.offset,
+      myKey = process.env.MYAPIKEY;
   
   db.logSearch({ searchTerm: term });
   
@@ -36,7 +36,7 @@ router.get('/:term', function(req, res){
     }
     body = JSON.parse(body).value;
     res.json(body.reduce(function(reduced, object, index){
-      reduced[index] = { name: object.name, thumbnailPic: object.thumbnailUrl, largePic: object.contentUrl, hostPageUrl: object.hostPageUrl };
+      reduced[index] = { name: object.name, thumbnailPic: object.thumbnailUrl, largePic: object.contentUrl, hostPageUrl: object.hostPageDisplayUrl };
       return reduced;
     }, []));
   }
